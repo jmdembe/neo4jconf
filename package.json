@@ -1,0 +1,26 @@
+{
+  "name": "neo4jxeair",
+  "version": "1.0.0",
+  "description": "Application for Neo4j GraphConnect and GraphDays presentations",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmdembe/neo4jconf.git"
+  },
+  "keywords": [
+    "neo4j",
+    "angularjs"
+  ],
+  "author": "Jessica Dembe and Patrick Elder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmdembe/neo4jconf/issues"
+  },
+  "homepage": "https://github.com/jmdembe/neo4jconf#readme"
+}
