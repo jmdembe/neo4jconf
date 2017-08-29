@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jmdembe/neo4jconf/issues"
   },
-  "homepage": "https://github.com/jmdembe/neo4jconf#readme"
+  "homepage": "https://github.com/jmdembe/neo4jconf#readme",
+  "dependencies": {
+    "neo4j-driver": "^1.2.0"
+  }
 }
