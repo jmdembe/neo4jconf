@@ -3,8 +3,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'), 
       
-      clean: ['build/'];
-      
+      clean: ['build/'],
+
       jshint: {
         options: {
           jshintrc: '.jshintrc', 
@@ -18,6 +18,11 @@ module.exports = function(grunt) {
       }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+
+
+    grunt.registerTask('sanity', ['clean']);
+    grunt.registerTask('default', ['clean', 'jshint', 'copy', 'concat']);
   };
