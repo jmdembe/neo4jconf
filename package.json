@@ -27,5 +27,9 @@
     "@uirouter/angularjs": "^1.0.6",
     "angular-ui-router": "^1.0.3",
     "neo4j-driver": "^1.2.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0"
   }
 }

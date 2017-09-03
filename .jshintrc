@@ -89,6 +89,7 @@
     // Custom Globals
     "globals"       : {
         "angular"   : true,
-        "grunt"     : true
+        "grunt"     : true,
+        "module"    : true
     }        // additional predefined global variables
 }
