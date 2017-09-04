@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app='neo4j-demo'>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -9,13 +9,16 @@
         <header>
             <h1>Hello?</h1>
             <nav>
-                <li></li>
+                <li>Home</li>
+                <li>Find</li>
+                <li>Analyze</li>
+                <li>Manage</li>
             </nav>
         </header>
         <!-- <main ui-view></main> -->
         <footer></footer>
     </body>
-    <script src='../node_modules/angular/angular.min.js'></script>
-    <script src='../node_modules/@uirouter/angularjs/release/angular-ui-router.min.js'></script> 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js'></script>
+    <!-- <script src='../node_modules/@uirouter/angularjs/release/angular-ui-router.min.js'></script>  -->
     <script src='client/js/neo4j-demo.module.js'></script>
 </html>
