@@ -25,6 +25,7 @@
   "homepage": "https://github.com/jmdembe/neo4jconf#readme",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.6",
+    "angular": "^1.6.6",
     "angular-ui-router": "^1.0.3",
     "neo4j-driver": "^1.2.0"
   },

@@ -37,30 +37,30 @@ module.exports = function(grunt) {
             }
           ]
         },
-        // vendorjs: {
-        //   files: [
-        //     {
-        //       expand: true,
-        //       cwd: 'node_modules/angular',
-        //       src: ['angular.min.js'], 
-        //       dest: 'dist/js/vendor/'
-        //     }, 
-        //     {
-        //       expand: true,
-        //       cwd: 'node_modules/@uirouter/angularjs/release',
-        //       src: ['angular-ui-router.min.js'], 
-        //       dest: 'dist/js/vendor/'
+        vendorjs: {
+          files: [
+            {
+              expand: true,
+              cwd: 'node_modules/angular',
+              src: ['angular.min.js'], 
+              dest: 'dist/js/vendor/'
+            }, 
+            {
+              expand: true,
+              cwd: 'node_modules/@uirouter/angularjs/release',
+              src: ['angular-ui-router.min.js'], 
+              dest: 'dist/js/vendor/'
 
-        //     }
-        //   ]
-        // }
+            }
+          ]
+        }, 
 
       }
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-concat');
+    // grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
 
