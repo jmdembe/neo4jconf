@@ -21,13 +21,9 @@ module.exports = function(grunt) {
           files: [
             {
               expand: true, 
-              cwd: 'src/client',
+              cwd: 'src/client/',
               src: '**/*.html',
               dest: 'dist/'
-            },
-            {
-              src: 'index.html',
-              dest: 'dist'
             }
           ]
         },
@@ -64,6 +60,13 @@ module.exports = function(grunt) {
         vendorjs: {
           src:['dist/js/vendor/**/*.js'],
           dest: 'dist/js/vendor.js'
+        }
+      }, 
+      sass: {
+        styles: {
+          files: {
+            'dist/css/style.css': 'src/client/sass/main.scss'
+          }
         }
       }
     });
