@@ -54,12 +54,12 @@ module.exports = function(grunt) {
           files: [
             {
               expand: true, 
-              cwd: 'css/**/*.*', 
-              dest: 'dist'  
+              cwd: 'src/client',
+              src: 'css/**/*.*', 
+              dest: 'dist/'  
             }
           ]
         } 
-        
       }, 
       concat: {
         custonjs: {
@@ -103,5 +103,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     
     grunt.registerTask('sanity', ['clean']);
-    grunt.registerTask('default', ['clean', 'jshint', 'copy', 'concat']);
+    grunt.registerTask('default', ['clean', 'jshint', 'copy', 'concat', 'sass']);
   };
