@@ -24,6 +24,10 @@ module.exports = function(grunt) {
               cwd: 'src/client',
               src: '**/*.html',
               dest: 'dist/'
+            },
+            {
+              src: 'index.html',
+              dest: 'dist'
             }
           ]
         },
