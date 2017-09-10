@@ -90,6 +90,8 @@
     "globals"       : {
         "angular"   : true,
         "grunt"     : true,
-        "module"    : true
+        "module"    : true, 
+        "process"   : true,
+        "require"   : true
     }        // additional predefined global variables
 }

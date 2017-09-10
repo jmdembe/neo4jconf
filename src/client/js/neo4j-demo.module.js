@@ -16,6 +16,11 @@
                 name: 'products',
                 url: '/products',
                 templateUrl:'src/client/views/products.template.html'
+            }) 
+            .state({
+                name: 'intro',
+                url: '/intro',
+                templateUrl: 'src/intro.template.url'
             });
 
     });

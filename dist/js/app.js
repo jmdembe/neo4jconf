@@ -11,6 +11,11 @@
                 name: 'home',
                 url: '/', 
                 templateUrl: 'src/client/views/home.template.html'
+            })
+            .state({
+                name: 'products',
+                url: '/products',
+                templateUrl:'src/client/views/products.template.html'
             });
 
     });
