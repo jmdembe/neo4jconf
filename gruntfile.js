@@ -49,7 +49,16 @@ module.exports = function(grunt) {
               dest: 'dist/js/vendor'
             },
           ]
-        }, 
+        },
+        css: {
+          files: [
+            {
+              expand: true, 
+              cwd: 'css/**/*.*', 
+              dest: 'dist'  
+            }
+          ]
+        } 
         
       }, 
       concat: {
@@ -60,6 +69,20 @@ module.exports = function(grunt) {
         vendorjs: {
           src:['dist/js/vendor/**/*.js'],
           dest: 'dist/js/vendor.js'
+        }
+      },
+      watch: {
+        html: {
+          files: ['src/client/index.html', 'src/client/views/**'],
+          tasks: ['copy:html']
+        }, 
+        sass: {
+          files: ['src/client/sass/**/*.scss'],
+          tasks: ['sass']
+        },
+        normalize: {
+          files: ['src/client/css/**'],
+          tasks: ['copy:css']
         }
       }, 
       sass: {
