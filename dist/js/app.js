@@ -10,17 +10,17 @@
             .state({
                 name: 'home',
                 url: '/', 
-                templateUrl: 'src/client/views/home.template.html'
+                templateUrl: 'views/home.template.html'
             })
             .state({
                 name: 'products',
                 url: '/products',
-                templateUrl:'src/client/views/products.template.html'
+                templateUrl:'views/products.template.html'
             }) 
             .state({
                 name: 'intro',
                 url: '/intro',
-                templateUrl: 'src/client/views/intro.template.html'
+                templateUrl: 'views/intro.template.html'
             });
 
     });

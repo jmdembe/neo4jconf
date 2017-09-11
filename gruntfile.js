@@ -69,22 +69,35 @@ module.exports = function(grunt) {
           dest: 'dist/js/app.js'
         }, 
         vendorjs: {
-          src:['dist/js/vendor/**/*.js'],
+          src:['dist/js/vendor/angular.min.js', 'dist/js/**/*.js'],
           dest: 'dist/js/vendor.js'
         }
       },
       watch: {
         html: {
           files: ['src/client/index.html', 'src/client/views/**'],
-          tasks: ['copy:html']
+          tasks: ['copy:html'],
+          options: {
+            livereload: true
+          }
         }, 
         sass: {
           files: ['src/client/sass/**/*.scss'],
-          tasks: ['sass']
+          tasks: ['sass'], 
+          options: {
+            livereload: true
+          }
         },
         normalize: {
           files: ['src/client/css/**'],
           tasks: ['copy:css']
+        },
+        js: {
+          files: ['src/client/js/**/*.js'], 
+          tasks: ['jshint', 'concat'],
+          options: {
+            livereload: true
+          }
         }
       }, 
       sass: {
