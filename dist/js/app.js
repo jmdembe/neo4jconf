@@ -21,6 +21,11 @@
                 name: 'intro',
                 url: '/intro',
                 templateUrl: 'views/intro.template.html'
+            })
+            .state({
+                name: 'systems',
+                url: '/systems',
+                templateUrl: 'views/systems.template.url'
             });
 
     });
