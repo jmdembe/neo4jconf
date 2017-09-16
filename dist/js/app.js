@@ -25,7 +25,7 @@
             .state({
                 name: 'systems',
                 url: '/systems',
-                templateUrl: 'views/systems.template.url'
+                templateUrl: 'views/systems.template.html'
             });
 
     });

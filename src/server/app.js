@@ -1,20 +1,18 @@
-'use strict';
+const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
+const session = driver.session();
 
-var express = require('express');
-var path = require ('path');
-var logger = require('logger');
-var bodyParser = require ('body-parser');
-var neo4j = require('neo4j-driver').v1;
-var app = express();
+const resultPromise = session.writeTransaction(tx => tx.run(
+  'CREATE (a:Greeting) SET a.message = $message RETURN a.message + ", from node " + id(a)',
+  {message: 'hello, world'}));
 
-app.set('port', process.env.PORT || 3000);
-app.use(bodyParser.json());
-app.use(express.static('dist/'));
+resultPromise.then(result => {
+  session.close();
 
-app.listen(app.get('port'), function serviceStarted(err){
-    if(err){
-        console.error(err, 'ERROR!');
-    } else {
-        console.log("Server located at: http://localhost:" + app.get('port'));
-    }
+  const singleRecord = result.records[0];
+  const greeting = singleRecord.get(0);
+
+  console.log(greeting);
+
+  // on application exit:
+  driver.close();
 });
