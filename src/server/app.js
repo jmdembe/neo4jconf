@@ -1,18 +1,24 @@
-const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
-const session = driver.session();
+var express = require('express');
+var path = require ('path');
+var logger = require('morgan');
+var bodyParser = require ('body-parser');
+var neo4j = require('neo4j-driver').v1;
 
-const resultPromise = session.writeTransaction(tx => tx.run(
-  'CREATE (a:Greeting) SET a.message = $message RETURN a.message + ", from node " + id(a)',
-  {message: 'hello, world'}));
+var app = express();
 
-resultPromise.then(result => {
-  session.close();
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-  const singleRecord = result.records[0];
-  const greeting = singleRecord.get(0);
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'dist')));
 
-  console.log(greeting);
-
-  // on application exit:
-  driver.close();
+app.get('/', function(req, res) {
+    res.send('HALLO!');
 });
+
+app.listen(3000);
+console.log('Server started on port 3000');
+
+module.exports = app;

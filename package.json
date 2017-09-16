@@ -28,6 +28,7 @@
     "angular": "^1.6.6",
     "angular-ui-router": "^1.0.3",
     "d3": "^4.10.2",
+    "ejs": "^2.5.7",
     "express": "^4.15.4",
     "neo4j-driver": "^1.2.0",
     "normalize.css": "^7.0.0"
