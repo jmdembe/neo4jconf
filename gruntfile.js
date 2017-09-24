@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'), 
       
-      clean: ['dist/'],
+      clean: ['src/server/public/'],
 
       jshint: {
         options: {
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
               expand: true, 
               cwd: 'src/client/',
               src: '**/*.html',
-              dest: 'dist/'
+              dest: 'src/server/public/'
             }
           ]
         },
@@ -35,20 +35,20 @@ module.exports = function(grunt) {
               expand: true,
               cwd: 'node_modules/angular',
               src: ['angular.min.js'], 
-              dest: 'dist/js/vendor'
+              dest: 'src/server/public/js/vendor'
             }, 
             {
               expand: true,
               cwd: 'node_modules/@uirouter/angularjs/release',
               src: ['angular-ui-router.min.js'], 
-              dest: 'dist/js/vendor'
+              dest: 'src/server/public/js/vendor'
 
             },
             {
               expand: true,
               cwd: 'node_modules/d3/build',
               src: ['d3.min.js'],
-              dest: 'dist/js/vendor'
+              dest: 'src/server/public/js/vendor'
             },
           ]
         },
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
               expand: true, 
               cwd: 'src/client',
               src: 'css/**/*.*', 
-              dest: 'dist/'  
+              dest: 'src/server/public/'  
             }
           ]
         } 
@@ -66,11 +66,11 @@ module.exports = function(grunt) {
       concat: {
         custonjs: {
           src: ['src/client/js/neo4j.module.js', 'src/client/js/**/*.js'], 
-          dest: 'dist/js/app.js'
+          dest: 'src/server/public/js/app.js'
         }, 
         vendorjs: {
-          src:['dist/js/vendor/angular.min.js', 'dist/js/**/*.js'],
-          dest: 'dist/js/vendor.js'
+          src:['src/server/public/js/vendor/angular.min.js', 'src/server/public/js/**/*.js'],
+          dest: 'src/server/public/js/vendor.js'
         }
       },
       watch: {
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
       sass: {
         styles: {
           files: {
-            'dist/css/style.css': 'src/client/sass/main.scss'
+            'src/server/public/css/style.css': 'src/client/sass/main.scss'
           }
         }
       }

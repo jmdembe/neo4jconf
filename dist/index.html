@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html ng-app='neo4j-demo'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href='css/normalize.css' rel="stylesheet" type='text/css'>
+        <link href='css/style.css' rel="stylesheet" type='text/css'>        
+        <title>Homeland Enterprise Architecture Repository</title>
+    </head>
+    <body>
+        <header>
+            <h1>Homeland Enterprise Architecture Repository</h1>
+            <nav ui-view = 'menu' id ='menu'></nav>
+        </header>
+        <main ui-view = 'content'></main>
+        <footer></footer>
+    </body>
+    <script src='js/vendor.js'></script>
+    <script src='js/app.js'></script> 
+</html>
