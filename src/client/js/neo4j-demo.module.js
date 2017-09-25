@@ -7,18 +7,10 @@
         $urlRouterProvider.when('','/');
 
         $stateProvider
-            .state('home', {
-                url: '/', 
-                views: {
-                    'menu': {
-                        templateUrl: 'views/menu.template.html', 
-                        controller: 'mainMenu'
-                    }, 
-                    'content': {
-                        templateUrl: 'views/home.template.html'
-                    }
-
-                }
+            .state({
+                name: 'home',
+                url: '/home', 
+                templateUrl: 'views/home.template.html'
             })
             .state({
                 name: 'products',

@@ -64,12 +64,12 @@ module.exports = function(grunt) {
         } 
       }, 
       concat: {
-        custonjs: {
+        customjs: {
           src: ['src/client/js/neo4j.module.js', 'src/client/js/**/*.js'], 
           dest: 'src/server/public/js/app.js'
         }, 
         vendorjs: {
-          src:['src/server/public/js/vendor/angular.min.js', 'src/server/public/js/**/*.js'],
+          src:['src/server/public/js/vendor/angular.min.js', 'src/server/public/js/vendor/**/*.js'],
           dest: 'src/server/public/js/vendor.js'
         }
       },

@@ -6,14 +6,21 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link href='css/normalize.css' rel="stylesheet" type='text/css'>
         <link href='css/style.css' rel="stylesheet" type='text/css'>        
-        <title>Homeland Enterprise Architecture Repository</title>
+        <title>Enterprise Architecture Information Repository</title>
     </head>
     <body>
         <header>
-            <h1>Homeland Enterprise Architecture Repository</h1>
-            <nav ui-view = 'menu' id ='menu'></nav>
+            <h1>Enterprise Architecture Information Repository</h1>
+            <nav>
+                <ul>
+                        <li><a ui-sref='home' href="#!/">Home</a></li>
+                        <li><a ui-sref='intro' href="#!/intro" >About EAIR</a></li>
+                        <li><a ui-sref='products' href='#!/products'>Products</a></li>
+                        <li><a ui-sref='systems' href="#!/systems">Systems</a></li>
+                    </ul>
+            </nav>
         </header>
-        <main ui-view = 'content'></main>
+        <main ui-view></main>
         <footer></footer>
     </body>
     <script src='js/vendor.js'></script>

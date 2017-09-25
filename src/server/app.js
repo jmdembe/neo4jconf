@@ -18,9 +18,9 @@ app.use(express.static(path.join(__dirname, 'public/')));
 var driver = neo4j.driver('bolt://localhost', neo4j.auth.basic('neo4j', 'neoadmin'));
 var session = driver.session();
 
-app.get('/', function(req, res) {
+app.get('/home', function(req, res) {
     session
-        .run('MATCH(n:ProductVersion) RETURN n LIMIT 25')
+        .run('MATCH(n) RETURN n LIMIT 25')
         .then(function(result) {
             result.records.forEach(function(record) {
                 console.log(record._fields[0].properties);
@@ -31,8 +31,6 @@ app.get('/', function(req, res) {
         });
     res.send('HALLO!');
 });
-
-app.get('/')
 
 app.listen(3000);
 console.log('Server started on port 3000');

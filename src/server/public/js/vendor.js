@@ -334,51 +334,6 @@ STANDALONEMONTH:"January February March April May June July August September Oct
 minFrac:2,minInt:1,negPre:"-\u00a4",negSuf:"",posPre:"\u00a4",posSuf:""}]},id:"en-us",localeID:"en_US",pluralCat:function(a,c){var e=a|0,f=c;void 0===f&&(f=Math.min(b(a),3));Math.pow(10,f);return 1==e&&0==f?"one":"other"}})}]),B(function(){we(u.document,Uc)}))})(window);!window.angular.$$csp().noInlineStyle&&window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 //# sourceMappingURL=angular.min.js.map
 
-(function () {
-    'use strict';
-
-})();
-(function () {
-    'use strict';
-
-    var app = angular.module ('neo4j-demo', ['ui.router']);
-
-    app.config(function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.when('','/');
-
-        $stateProvider
-            .state('home', {
-                url: '/', 
-                views: {
-                    'menu': {
-                        templateUrl: 'views/menu.template.html', 
-                        controller: 'mainMenu'
-                    }, 
-                    'content': {
-                        templateUrl: 'views/home.template.html'
-                    }
-
-                }
-            })
-            .state({
-                name: 'products',
-                url: '/products',
-                templateUrl:'views/products.template.html'
-            }) 
-            .state({
-                name: 'intro',
-                url: '/intro',
-                templateUrl: 'views/intro.template.html'
-            })
-            .state({
-                name: 'systems',
-                url: '/systems',
-                templateUrl: 'views/systems.template.html'
-            });
-
-    });
-
-}());
 /**
  * State-based routing for AngularJS 1.x
  * NOTICE: This monolithic bundle also bundles the @uirouter/core code.

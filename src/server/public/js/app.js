@@ -1,28 +1,16 @@
 (function () {
     'use strict';
 
-})();
-(function () {
-    'use strict';
-
     var app = angular.module ('neo4j-demo', ['ui.router']);
 
     app.config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when('','/');
 
         $stateProvider
-            .state('home', {
-                url: '/', 
-                views: {
-                    'menu': {
-                        templateUrl: 'views/menu.template.html', 
-                        controller: 'mainMenu'
-                    }, 
-                    'content': {
-                        templateUrl: 'views/home.template.html'
-                    }
-
-                }
+            .state({
+                name: 'home',
+                url: '/home', 
+                templateUrl: 'views/home.template.html'
             })
             .state({
                 name: 'products',
