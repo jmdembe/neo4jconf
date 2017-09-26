@@ -18,9 +18,9 @@ app.use(express.static(path.join(__dirname, 'public/')));
 var driver = neo4j.driver('bolt://localhost', neo4j.auth.basic('neo4j', 'neoadmin'));
 var session = driver.session();
 
-app.get('/home', function(req, res) {
+app.get('/', function(req, res) {
     session
-        .run('MATCH(n) RETURN n LIMIT 25')
+        .run('MATCH (n:Activity) RETURN n LIMIT 25')
         .then(function(result) {
             result.records.forEach(function(record) {
                 console.log(record._fields[0].properties);
@@ -29,7 +29,7 @@ app.get('/home', function(req, res) {
         .catch(function(err){
             console.error(err);
         });
-    res.send('HALLO!');
+    res.render('HALLO!');
 });
 
 app.listen(3000);

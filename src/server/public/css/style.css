@@ -10,4 +10,11 @@ li {
   display: inline;
   padding: 24px; }
 
+.link {
+  stroke: #ccc; }
+
+.node text {
+  pointer-events: none;
+  font: 10px sans-serif; }
+
 /*# sourceMappingURL=style.css.map */

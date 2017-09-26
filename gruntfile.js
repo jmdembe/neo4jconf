@@ -7,17 +7,17 @@ module.exports = function(grunt) {
       
       clean: ['src/server/public/'],
 
-      jshint: {
-        options: {
-          jshintrc: '.jshintrc', 
-          ignores: ['node_modules/**']
-        },
-        source: {
-          files: {
-            src: ['src/client/js/**/*.js']
-          }
-        }
-      },
+      // jshint: {
+      //   options: {
+      //     jshintrc: '.jshintrc', 
+      //     ignores: ['node_modules/**']
+      //   },
+      //   source: {
+      //     files: {
+      //       src: ['src/client/js/**/*.js']
+      //     }
+      //   }
+      // },
       copy: {
         html: {
           files: [
@@ -59,6 +59,16 @@ module.exports = function(grunt) {
               cwd: 'src/client',
               src: 'css/**/*.*', 
               dest: 'src/server/public/'  
+            }
+          ]
+        }, 
+        assets: {
+          files: [
+            {
+              expand: true, 
+              cwd: 'src/client',
+              src: ['assets/**/*.*'], 
+              dest: 'src/server/public/assets'
             }
           ]
         } 
@@ -110,7 +120,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    // grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -118,5 +128,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     
     grunt.registerTask('sanity', ['clean']);
-    grunt.registerTask('default', ['clean', 'jshint', 'copy', 'concat', 'sass']);
+    grunt.registerTask('default', ['clean', 'copy', 'concat', 'sass']);
   };

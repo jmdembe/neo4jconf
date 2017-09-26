@@ -93,6 +93,7 @@
         "module"    : true, 
         "process"   : true,
         "require"   : true, 
-        "use strict": true
+        "use strict": true, 
+        "d3"        : true
     }        // additional predefined global variables
 }
