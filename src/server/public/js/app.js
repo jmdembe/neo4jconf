@@ -37,8 +37,8 @@
 
     angular.module('neo4j-demo').controller('SystemsController', function(){
         var w = 1000;
-        var h = 600;
-        var linkDistance=150;
+        var h = 1000;
+        var linkDistance=250;
     
         var colors = d3.scale.category10();
     
@@ -46,18 +46,18 @@
     
         nodes: [
         {name: "EAIR", "label": "System", "id": 0},
-        {name: "Apache Software Foundation [Product]"},
-        {name: "DHS Enterprise Architecture Information Repository [Data Asset]"},
-        {name: "Enterprise Architecture Online Repository [Data Asset"},
-        {name: "Information Technology Acquisition Review [Data Asset]"},
-        {name: "Develop and Maintain Enterprise Architecture [Activity]"},
-        {name: "Enterprise Architecture [Investment]"},
-        {name: "Enterprise Architecture Management Tool [Child System]"},
-        {name: "The PHP Group [Product]"},
-        {name: "Oracle Database 12.1 [Product]"},
-        {name: "Oracle Application Express [Product]"},
-        {name: "Open BSD Open SSH 5.3 [Product]"},
-        {name: "ElasticSearch [Product]"}
+        {name: "Apache Software Foundation", "label": "USES"},
+        {name: "DHS Enterprise Architecture Information Repository", "label": "Data Asset"},
+        {name: "Enterprise Architecture Online Repository", "label": "Data Asset"},
+        {name: "Information Technology Acquisition Review", "label": "Data Asset"},
+        {name: "Develop and Maintain Enterprise Architecture", "label": "Activity"},
+        {name: "Enterprise Architecture", "label": "Investment"},
+        {name: "Enterprise Architecture Management Tool", "label": "Child System"},
+        {name: "The PHP Group", "label": "Product"},
+        {name: "Oracle Database 12.1", "label": "Product"},
+        {name: "Oracle Application Express", "label": "Product"},
+        {name: "Open BSD Open SSH 5.3", "label": "Product"},
+        {name: "ElasticSearch", "label": "Product"}
         ],
         edges: [
         {source: 0, target: 1},
@@ -102,7 +102,7 @@
           .data(dataset.nodes)
           .enter()
           .append("circle")
-          .attr({"r":15})
+          .attr({"r":17})
           .style("fill",function(d,i){return colors(i);})
           .call(force.drag)
     
@@ -139,13 +139,15 @@
                    'id':function(d,i){return 'edgelabel'+i},
                    'dx':80,
                    'dy':0,
-                   'font-size':10,
+                   'font-size':11,
                    'fill':'#aaa'});
     
         edgelabels.append('textPath')
             .attr('xlink:href',function(d,i) {return '#edgepath'+i})
             .style("pointer-events", "none")
-            .text(function(d,i){return 'label '+i});
+            .text(function(d,i){
+                console.log(d);
+                return d.target.label});
     
     
         svg.append('defs').append('marker')
