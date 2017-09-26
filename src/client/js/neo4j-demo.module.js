@@ -9,7 +9,7 @@
         $stateProvider
             .state({
                 name: 'home',
-                url: '/home', 
+                url: '/', 
                 templateUrl: 'views/home.template.html'
             })
             .state({
@@ -25,7 +25,9 @@
             .state({
                 name: 'systems',
                 url: '/systems',
-                templateUrl: 'views/systems.template.html'
+                templateUrl: 'views/systems.template.html', 
+                controller: 'SystemsController',
+                controllerAs: 'system'
             });
 
     });
